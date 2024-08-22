@@ -11,10 +11,10 @@ const Authenticate = async (req, res, next) => {
     const bearer = bearerHeader.split(" ");
     const token = bearer[1];
     // console.log("auth called");
-
+    
     // const token = req.sessionstotage.jwtoken;
     // const token = window.sessionStorage.getItem('jwtoken');
-    // console.log(token);
+    console.log(token);
     const verifyTokens = jwt.verify(token, process.env.SECRET_KEY);
     // console.log(verifyTokens);
     const rootUser = await User.findOne({
